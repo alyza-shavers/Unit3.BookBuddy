@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-import Login from "./components/Login.jsx";
-import Navbar from "./components/Navbar.jsx";
-import Container from './components/Container.jsx';
-import NewRegistrationForm from './components/Register.jsx';
-import BooksCard from './components/Books.jsx';
-import UserDetails from './components/UserDetails.jsx';
-import BookDetails from './components/BookDetails';
-
+import Login from './components/Auth/Login.jsx';
+import Navbar from "./components/Common/Navbar.jsx";
+import Container from './components/Common/Container.jsx';
+import NewRegistrationForm from './components/Auth/Register.jsx';
+import BooksCard from "./components/Books/BooksCard.jsx";
+import UserDetails from './components/Auth/UserDetails.jsx';
+import BookDetails from './components/Books/BookDetails.jsx';
+y
 
 const APIURL = `https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api`;
 
@@ -76,7 +75,7 @@ function App() {
 
   const checkoutBook = async (bookId) => {
     try {
-      const response = await fetch(APIURL + "/books" + `/${bookId}`, {
+      const response = await fetch(APIURL + "/books/" + bookId, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -97,7 +96,7 @@ function App() {
 
   const returnBook = async (bookId) => {
     try {
-      const response = await fetch(APIURL + "/books" + `/${bookId}`, {
+      const response = await fetch(APIURL + "/books/" + bookId, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
