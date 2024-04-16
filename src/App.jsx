@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import bookLogo from './assets/books.png'
+
 import Login from "./components/Login.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Container from './components/Container.jsx';
